@@ -10,8 +10,8 @@ When('I enter password {kraken-string}', async function (password) {
     return await element.setValue(password);
 });
 
-When('I click next', async function() {
-    let element = await this.driver.$('#ember11');
+When('I click sign in', async function() {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/div/section/form/button/span');
     return await element.click();
 });
 
@@ -97,5 +97,22 @@ Then('I click on posts2', async function () {
 
 Then('I click on published2', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[1]/ul[2]/li[1]/div/div/ul/li[3]/a');
+    return await element.click();
+});
+
+//Empieza escenario 6
+
+Then('I click on the profile icon', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[2]/div/div/div[1]/div[1]/div/div');
+    return await element.click();
+});
+
+Then('I click on logout', async function () {
+    let element = await this.driver.$('/html/body/div[1]/div/ul/li[9]/a');
+    return await element.click();
+});
+
+Then('I see a post detail', async function () {
+    let element = await this.driver.$('/html/body/div[1]/div/main/div/div/article[1]/div/a/header/h2');
     return await element.click();
 });
