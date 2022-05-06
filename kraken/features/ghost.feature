@@ -77,7 +77,7 @@ Scenario: Login - crear post - visualizar post creado - editar post - visualizar
     And I see a post detail
 
   @user8 @web
-  Scenario: Login - Crear post - Listar posts - 
+  Scenario: Login - Crear post - Listar posts - Eliminar post - Listar posts
   Given I navigate to page "http://localhost:2368/"
     And I wait for 5 seconds
     And I navigate to page "http://localhost:2368/ghost/"
