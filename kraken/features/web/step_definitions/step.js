@@ -21,7 +21,7 @@ When('I click publish a post', async function() {
 });
 
 When('I click on the redact post title inputbox', async function() {
-    let element = await this.driver.$('#ember63');
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/section/div[1]/div[1]/textarea');
     return await element.click();
 });
 
@@ -52,5 +52,50 @@ Then('I click on the publish button again', async function () {
 
 Then('I publish the post', async function () {
     let element = await this.driver.$('#ember81 > span');
+    return await element.click();
+});
+
+Then('I click on posts', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/section/header/div/div[1]/a');
+    return await element.click();
+});
+
+Then('I click on published', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[1]/ul[2]/li[1]/div/div/ul/li[3]/a');
+    return await element.click();
+});
+
+Then('I click on the post title', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/main/section/section/ol/li[2]/a[1]');
+    return await element.click();
+});
+
+When('I click on the redact post title inputbox2', async function() {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/section/div[1]/div[1]/textarea');
+    return await element.click();
+});
+
+When('I enter post edited title{string}', async function (post_title) {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/section/div[1]/div[1]/textarea');
+    return await element.setValue(post_title);
+});
+
+When('I click on update', async function() {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/section/header/section/div[1]/div[1]');
+    return await element.click();
+});
+
+When('I click on the update button', async function() {
+    let element = await this.driver.$('/html/body/div[1]/div/footer/button[2]');
+    return await element.click();
+});
+
+Then('I click on posts2', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/section/header/div/div[1]/a');
+    return await element.click();
+});
+
+Then('I click on published2', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[1]/ul[2]/li[1]/div/div/ul/li[3]/a');
     return await element.click();
 });
