@@ -1,5 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
+//-----------------------------------------------------
+//Inicia escenario 3
+
 When('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('#ember7');
     return await element.setValue(email);
@@ -100,7 +103,8 @@ Then('I click on published2', async function () {
     return await element.click();
 });
 
-//Empieza escenario 6
+//-----------------------------------------------------
+//Inicia escenario 6
 
 Then('I click on the profile icon', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[2]/div/div/div[1]/div[1]/div/div');
@@ -114,5 +118,23 @@ Then('I click on logout', async function () {
 
 Then('I see a post detail', async function () {
     let element = await this.driver.$('/html/body/div[1]/div/main/div/div/article[1]/div/a/header/h2');
+    return await element.click();
+});
+
+//-----------------------------------------------------
+//Inicia escenario 8
+
+Then('I click on options', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/main/button');
+    return await element.click();
+});
+
+Then('I click on delete post', async function () {
+    let element = await this.driver.$('/html/body/div[2]/div/main/div/div/div/div/div[2]/form/button');
+    return await element.click();
+});
+
+Then('I click on delete button', async function () {
+    let element = await this.driver.$('/html/body/div[5]/div/div/div[2]/button[2]');
     return await element.click();
 });
