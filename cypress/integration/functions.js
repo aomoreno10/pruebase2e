@@ -25,7 +25,7 @@ export function publicarPost() {
 
 // 3. Ver los post publicados en el home del Blog
 export function listarPostsBlog() {
-
+    cy.visit(URL);
 }
 
 // 4. Ver detalle de un post
@@ -54,7 +54,7 @@ export function login() {
 
 // 7. Listar posts en interfaz de administrador
 export function listarPostsAdmin() {
-
+    cy.visit(URL + '/ghost/#/posts');
 }
 
 // 8. Logout
@@ -67,6 +67,7 @@ export function logout() {
 
 // 9. Eliminar post
 export function eliminarPost() {
+    cy.visit(URL + '/ghost/#/posts');
     cy.get('.gh-post-list-title').first().click();
     cy.wait(1000);
     cy.get('.settings-menu-toggle').click();
@@ -79,7 +80,15 @@ export function eliminarPost() {
 
 // 10. Cambiar el acceso del post
 export function cambiarAccesoPost() {
-
+    cy.visit(URL + '/ghost/#/posts');
+    cy.get('.gh-post-list-title').first().click();
+    cy.get('.settings-menu-toggle > span').click();
+    cy.get('#ember490').select('Members only');
+    cy.get('.settings-menu-open').click();
+    cy.get('#ember469 > span').click();
+    cy.get('#ember517 > span').click();
+    cy.get('#ember519 > span').click();
+    cy.get('#ember466').click();
 }
 
 // 11. Agregar imagen al post
