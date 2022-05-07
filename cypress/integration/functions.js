@@ -81,14 +81,20 @@ export function eliminarPost() {
 // 10. Cambiar el acceso del post
 export function cambiarAccesoPost() {
     cy.visit(URL + '/ghost/#/posts');
+    cy.wait(1000);
     cy.get('.gh-post-list-title').first().click();
+    cy.wait(1000);
     cy.get('.settings-menu-toggle > span').click();
-    cy.get('#ember490').select('Members only');
+    cy.wait(1000);
+    cy.get('select').select('Members only');
+    cy.wait(1000);
     cy.get('.settings-menu-open').click();
-    cy.get('#ember469 > span').click();
-    cy.get('#ember517 > span').click();
-    cy.get('#ember519 > span').click();
-    cy.get('#ember466').click();
+    cy.wait(1000);
+    cy.get('.gh-publishmenu-trigger').click();
+    cy.wait(1000);
+    cy.get('.gh-publishmenu-button').click();
+    cy.wait(1000);
+    cy.get('.gh-editor-back-button').click();
 }
 
 // 11. Agregar imagen al post
@@ -126,7 +132,6 @@ export function eliminarTodosLosPost() {
                 cy.wait(1000);
                 cy.get('.epm-modal-container').find('.ember-view').click();
                 cy.wait(1000);
-
                 cy.visit(URL + '/ghost/#/posts');
                 cy.wait(1000);
             });

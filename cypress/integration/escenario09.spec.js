@@ -14,7 +14,9 @@ describe('Escenario 9', function () {
         publicarPost();
         cy.wait(1000);
         cambiarAccesoPost();
+        cy.wait(1000);
         logout();
+        cy.wait(1000);
         listarPostsBlog();        
     })
 })
