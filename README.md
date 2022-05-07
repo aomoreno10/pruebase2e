@@ -46,6 +46,12 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 
 # Instrucciones para correr las pruebas
 
+## Distribución de casos de prueba
+Los casos de prueba se distribuyeron por ramas:
+- En la rama escenario/julian se encuentran las pruebas para los escenarios 1, 4, 5, 10, 13, 16 y 19.
+- En la rama escenario/Julie se encuentran las pruebas para los escenarios 3, 6, 8, 9, 15 y 20.
+- En la ramma escenario/Abel se encuentran las pruebas para los escenarios 2, 7, 11, 12, 14, 17 y 18. 
+
 ## Cypress
 - Copiar los archivos de la carpeta cypress/integration en la carpeta integration de un nuevo proyecto en cypress
 - Editar las constantes del archivo env.js acordes a la aplicación Ghost que van a probar
@@ -54,5 +60,7 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 ## Kraken
 - Haber seguido los pasos del tutorial y tener kraken correctamente instalado
 - Modificar el archivo properties.json con los datos de su usuario y contraseña local
+- Para correr cada uno de los escenarios copie el contenido del archivo .txt con el número del escenario especificado en el archivo ghost.feature
 - Ubicarse en la raíz de la carpeta Kraken y ejecutar el comando ./node_modules/kraken-node/bin/kraken-node run
+
 
