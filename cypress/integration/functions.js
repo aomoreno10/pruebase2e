@@ -30,12 +30,17 @@ export function listarPostsBlog() {
 
 // 4. Ver detalle de un post
 export function verPostBlog() {
-
+    cy.visit(URL);
+    cy.get('.post-card-title').first().click();
 }
 
 // 5. Editar el contenido de un post publicado
-export function editarPost() {
-
+export function editarPost(titulo, contenido) {
+    cy.get('.gh-content-entry-title').first().click();
+    cy.wait(1000);
+    cy.get('.gh-editor-title').type(titulo, { force: true });
+    cy.get('.koenig-editor__editor-wrapper').find('[contenteditable]').type(contenido);
+    cy.get('.gh-editor-back-button').click();
 }
 
 // 6. Login
@@ -54,7 +59,10 @@ export function listarPostsAdmin() {
 
 // 8. Logout
 export function logout() {
-
+    cy.visit(URL + '/ghost/#/posts');
+    cy.wait(1000);
+    cy.get('.gh-user-avatar').click();
+    cy.get('.user-menu-signout').click();
 }
 
 // 9. Eliminar post
