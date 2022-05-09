@@ -60,7 +60,8 @@ Los casos de prueba se distribuyeron por ramas:
 ## Cypress
 - Copiar los archivos de la carpeta cypress/integration en la carpeta integration de un nuevo proyecto en cypress
 - Editar las constantes del archivo env.js acordes a la aplicación Ghost que van a probar
-- Correr las pruebas
+- Ubicarse en una consola en la raíz del proyecto y ejecutar el comando cypress open
+- Dar click en el escenario que desee probar.
 
 ## Kraken
 - Haber seguido los pasos del tutorial y tener kraken correctamente instalado
