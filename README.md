@@ -1,5 +1,10 @@
-# pruebase2e
+# Pruebase2e
 Pruebas de Ghost para pruebas automatizadas
+
+# Integrantes y correos
+- Julie Andrea Padilla González j.padillag@uniandes.edu.co
+- Abel Oswaldo Moreno Acevedo ao.moreno10@uniandes.edu.co
+- Julián Cáceres Florez j.caceresf@uniandes.edu.co
 
 # Entorno inicial
 
