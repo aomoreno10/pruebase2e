@@ -31,3 +31,5 @@ Deseable contar con Cypress instalado globalmente. Para hacerlo: npm i cypress -
 - Dentro del directorio ./kraken ejecutar: npm i 
 - Para correr una prueba, reemplazar el contenido de ghost.feature por el contenido del escenarioXX.txt, y después ejecutar: npx kraken-node run
 NOTA: Es posible que la consola integrada de VSCode no reconozca kraken-node como comando, así que se sugiere ejecutar las pruebas con una terminal Git Bash o Powershell.
+
+./node_modules/kraken-node/bin/kraken-node ru

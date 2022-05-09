@@ -17,7 +17,7 @@ When('I click next', async function () {
 })
 
 When('I open my posts', async function () {
-  let element = await this.driver.$('#ember26');
+  let element = await this.driver.$('a[href="#/posts/"]');
   return await element.click();
 })
 
@@ -34,6 +34,21 @@ When('I type a post title {kraken-string}', async function (title) {
 When('I type a post body {kraken-string}', async function (body) {
   let element = await this.driver.$('div[data-kg="editor"]');
   return await element.setValue(body);
+});
+
+When('I click on "Add feature image"', async function () {
+  let element = await this.driver.$('.gh-editor-feature-image-unsplash');
+  return await element.click();
+});
+
+When('I click on "Insert image"', async function () {
+  let element = await this.driver.$('div.gh-unsplash-photo-footer > a.gh-unsplash-button');
+  return await element.click();
+});
+
+When('I click on "Remove image"', async function () {
+  let element = await this.driver.$('.image-delete');
+  return await element.click();
 });
 
 When('I click on "Publish" dropdown', async function () {

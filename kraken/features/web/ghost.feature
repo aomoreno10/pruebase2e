@@ -1,8 +1,8 @@
-Feature: Escenario 10
+Feature: Escenarios
 
 @user1 @web
-Scenario: Como usuario inicio sesion, creo y luego elimino un post, cierro sesion y no encuentro dicho post
-  Given I navigate to page "http://localhost:2368/ghost/"
+Scenario: 2. Como usuario inicio sesion, creo un post, publico el post y lo veo en el blog
+  Given I navigate to page "<URL_ADMIN>"
   And I wait for 3 seconds
   When I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -10,6 +10,8 @@ Scenario: Como usuario inicio sesion, creo y luego elimino un post, cierro sesio
   And I click next
   And I wait for 2 seconds
   And I open my posts
+  And I wait for 2 seconds
+  And I delete all the available posts
   And I wait for 2 seconds
   And I click on "New Post" button
   And I wait for 2 seconds
@@ -25,10 +27,6 @@ Scenario: Como usuario inicio sesion, creo y luego elimino un post, cierro sesio
   And I wait for 2 seconds
   And I go back to admin dashboard
   And I wait for 2 seconds
-  And I click on "$$string_1" post
-  And I wait for 2 seconds 
-  And I delete the post
-  And I wait for 5 seconds
-  And I logout
-  And I navigate to page "http://localhost:2368/"
-  Then I should not see "$$string_1" post in blog entries
+  Given I navigate to page "<URL>"
+  And I wait for 3 seconds
+  And I open any post as a user
