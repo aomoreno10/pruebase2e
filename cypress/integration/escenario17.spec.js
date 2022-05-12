@@ -36,6 +36,18 @@ describe('Publicar post', function () {
     cy.screenshot('06_verPostBlog')
     cy.wait(1000);
 
-    cy.get(`.article-title`).should('include.text', randomTitle);
+    cy.get('body').then(($ele) => {
+
+        if ($ele.find('.article-title').length > 0) {
+            cy.get(`.article-title`).should('include.text', randomTitle);
+        }
+
+        if ($ele.find(".post-full-title").length > 0) {
+            cy.get(`.post-full-title`).should('include.text', randomTitle);
+        }
+        
+    })
+
+    
   })
 })

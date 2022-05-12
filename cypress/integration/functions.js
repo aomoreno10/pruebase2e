@@ -7,7 +7,18 @@ export function crearPost(titulo, contenido) {
     cy.wait(1000);
     cy.get('.gh-editor-title').type(titulo, { force: true });
     cy.get('.koenig-editor__editor-wrapper').find('[contenteditable]').type(contenido);
-    cy.get('.gh-editor-back-button').click();
+
+    cy.get('body').then(($ele) => {
+
+        if ($ele.find('.gh-editor-back-button').length > 0) {
+            cy.get('.gh-editor-back-button').click()
+        }
+
+        if ($ele.find("a[href='#/posts/']").length > 0) {
+            cy.get("a[href='#/posts/']").first().click()
+        }
+
+    })
 
 }
 
@@ -19,8 +30,19 @@ export function publicarPost() {
     cy.wait(1000);
     cy.get('.gh-publishmenu-button').click();
     cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-publishmenu-footer').find('.ember-view').click();
+    
+    cy.get('body').then(($ele) => {
+
+        if ($ele.find('.gh-editor-back-button').length > 0) {
+            cy.get('.gh-editor-back-button').click()
+        }
+
+        if ($ele.find("a[href='#/posts/']").length > 0) {
+            cy.get("a[href='#/posts/']").first().click()
+        }
+        
+    })
 }
 
 // 3. Ver los post publicados en el home del Blog
@@ -67,7 +89,7 @@ export function eliminarPost() {
     cy.wait(1000);
     cy.get('.settings-menu-delete-button').click();
     cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
+    cy.get('.modal-content').find('.ember-view').click();
     cy.wait(1000);
 }
 
@@ -80,30 +102,23 @@ export function cambiarAccesoPost() {
 export function agregarImagenPost() {
     cy.get('.gh-post-list-title').first().click();
     cy.wait(1000);
-    cy.get('.gh-editor-feature-image-unsplash').click({ force: true });
+    cy.get("button[title='Settings']").click();
+    cy.wait(1000);
+    cy.get('.gh-image-uploader-unsplash').click({ force: true });
     cy.wait(1000);
     cy.get('.gh-unsplash-grid').find("a[href='#']").contains('Insert image').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
-    cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
-    cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 12. Eliminar imagen
 export function eliminarImagenPost() {
     cy.get('.gh-post-list-title').first().click();
+    cy.get("button[title='Settings']").click();
     cy.wait(1000);
-    cy.get('.image-delete').first().click();
+    cy.get('.image-cancel').first().click();
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
-    cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
-    cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 13. Despublicar el posts
@@ -133,11 +148,11 @@ export function eliminarTodosLosPost() {
             cy.get('.gh-post-list-title').each((items) => { 
                 cy.get('.gh-post-list-title').first().click();
                 cy.wait(1000);
-                cy.get('.settings-menu-toggle').click();
+                cy.get("button[title='Settings']").click();
                 cy.wait(1000);
                 cy.get('.settings-menu-delete-button').click();
                 cy.wait(1000);
-                cy.get('.epm-modal-container').find('.ember-view').click();
+                cy.get('.modal-content').find('.ember-view').click();
                 cy.wait(1000);
 
                 cy.visit(URL + '/ghost/#/posts');
