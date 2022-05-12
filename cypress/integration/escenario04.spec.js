@@ -6,7 +6,9 @@ describe('Escenario 4', function () {
   it('Al entrar como usuario al blog y abrir un post, su detalle lleva el mismo título', function () {
     listarPostsBlog();
     cy.wait(1000);
+    cy.screenshot('01-listarPostsBlog')
     abrirPostYCompararTitulos();
+    cy.screenshot('02-abrirPostYCompararTitulos')
   })
 })
 

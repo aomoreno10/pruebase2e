@@ -8,12 +8,15 @@ describe('Escenario 5:', function () {
 
     login();
     cy.wait(500);
+    cy.screenshot('01-listarPostsBlog')
     editarPost(randomTitle);
     cy.wait(500);
+    cy.screenshot('02-editarPost')
     cy.visit(URL + '/ghost/#/signout')
     cy.wait(1000)
     cy.visit(URL)
     cy.get(`h2:contains("${randomTitle}")`).should('have.length', 1)
+    cy.screenshot('03-buscarTituloPost')
   })
 })
 
