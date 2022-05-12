@@ -119,6 +119,7 @@ When('I click on the profile icon', async function () {
 
 When('I click on logout', async function () {
     let element = await this.driver.$('/html/body/div[1]/div/ul/li[9]/a');
+    await this.driver.saveScreenshot('./screenshots/logout.png');
     return await element.click();
 });
 

@@ -12,6 +12,8 @@ describe('Escenario 6', function () {
         let postTitle = faker.random.word();
         let postBody = faker.random.words(12);
 
+        cy.viewport(1280, 720)
+        
         login();
         cy.screenshot('Escenario6_paso1_login')
         cy.wait(1000);

@@ -31,7 +31,7 @@ export function listarPostsBlog() {
 // 4. Ver detalle de un post
 export function verPostBlog() {
     cy.visit(URL);
-    cy.get('.post-card-title').first().click();
+    cy.get('.post-card-title').first().click({force:true});
 }
 
 // 5. Editar el contenido de un post publicado
@@ -62,6 +62,7 @@ export function logout() {
     cy.visit(URL + '/ghost/#/posts');
     cy.wait(1000);
     cy.get('.gh-user-avatar').click();
+    cy.wait(1000);
     cy.get('.user-menu-signout').click();
 }
 
@@ -94,7 +95,9 @@ export function cambiarAccesoPost() {
     cy.wait(1000);
     cy.get('.gh-publishmenu-button').click();
     cy.wait(1000);
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-btn-black').click();
+    cy.wait(1000);
+    cy.get('.gh-editor-back-button').click({force: true});
 }
 
 // 11. Agregar imagen al post
