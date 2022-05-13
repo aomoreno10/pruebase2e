@@ -49,14 +49,7 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 19. El usuario inicia sesión, cambia la contraseña, cierra sesión y vuelve a hacer login para verificar que funcione la nueva contraseña.
 20. El usuario inicia sesión, crea un nuevo post,  lista los posts en la interfaz de administrador, crea un nuevo post con contenido duplicado y vuelve a listar los posts en la interfaz de administrador para verificar su creación.
 
-# Instrucciones para correr las pruebas
-
-## Distribución de casos de prueba
-Los casos de prueba se distribuyeron por ramas:
-- En la rama escenario/julian se encuentran las pruebas para los escenarios 1, 4, 5, 10, 13, 16 y 19.
-- En la rama escenario/Julie se encuentran las pruebas para los escenarios 3, 6, 8, 9, 15 y 20.
-- En la ramma escenario/Abel se encuentran las pruebas para los escenarios 2, 7, 11, 12, 14, 17 y 18. 
-
+# Instrucciones para correr las pruebas 
 ## Cypress
 - Copiar los archivos de la carpeta cypress/integration en la carpeta integration de un nuevo proyecto en cypress
 - Editar las constantes del archivo env.js acordes a la aplicación Ghost que van a probar
