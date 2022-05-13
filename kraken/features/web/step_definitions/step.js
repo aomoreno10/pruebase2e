@@ -174,7 +174,7 @@ When('I click on pages', async function () {
     return await element.click();
 });
 
-When('I delete all the available posts', async function () {
+When('I delete all the available posts2', async function () {
     let posts = await this.driver.$$('h3.gh-content-entry-title')
     let counter = posts.length
     while (counter > 0) {
@@ -199,19 +199,10 @@ When('I delete all the available posts', async function () {
     }
 });
 
+//-------------------------------------------------------------
 //Funciones Julián
 
 const expect = require('chai').expect;
-
-When('I enter email {kraken-string}', async function (email) {
-  let element = await this.driver.$('#ember7');
-  return await element.setValue(email);
-});
-
-When('I enter password {kraken-string}', async function (password) {
-  let element = await this.driver.$('#ember9');
-  return await element.setValue(password);
-});
 
 When('I click next', async function () {
   let element = await this.driver.$('#ember11');

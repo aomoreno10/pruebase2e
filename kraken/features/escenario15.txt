@@ -1,3 +1,5 @@
+Feature: Escenario 15
+
 @user15 @web
 Scenario: El usuario inicia sesión, elimina todos los posts y luego los lista.
 Given I navigate to page "http://localhost:2368/ghost/"
@@ -10,7 +12,7 @@ Given I navigate to page "http://localhost:2368/ghost/"
   And I wait for 2 seconds
   And I click on post on lateral menu
   And I wait for 2 seconds
-  And I delete all the available posts
+  And I delete all the available posts2
   And I wait for 2 seconds
   Then I navigate to page "http://localhost:2368"
   And I wait for 2 seconds

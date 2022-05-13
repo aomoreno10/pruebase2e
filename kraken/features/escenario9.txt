@@ -1,3 +1,5 @@
+Feature: Escenario 9
+
 @user9 @web
 Scenario: El usuario inicia sesión, crea un nuevo post, lo publica, cambia el acceso del post, cierra sesión, ve los post publicados en el home del blog.
 Given I navigate to page "http://localhost:2368/ghost/"

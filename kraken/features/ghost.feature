@@ -1,7 +1,7 @@
 Feature: Pruebas E2E en la pagina de ghost.
 
-@user15 @web
-Scenario: El usuario inicia sesión, elimina todos los posts y luego los lista.
+@user9 @web
+Scenario: El usuario inicia sesión, crea un nuevo post, lo publica, cambia el acceso del post, cierra sesión, ve los post publicados en el home del blog.
 Given I navigate to page "http://localhost:2368/ghost/"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
@@ -10,9 +10,37 @@ Given I navigate to page "http://localhost:2368/ghost/"
   And I wait for 2 seconds
   And I click sign in
   And I wait for 2 seconds
-  And I click on post on lateral menu
+  And I click publish a post
   And I wait for 2 seconds
-  And I delete all the available posts
+  And I click on the redact post title inputbox
   And I wait for 2 seconds
-  Then I navigate to page "http://localhost:2368"
+  And I enter post title'Post para escenario 9'
+  And I wait for 2 seconds
+  And I click on the redact post body inputbox
+  And I wait for 2 seconds
+  And I enter post body'Se está probando el escenario 9'
+  And I click on the publish button
+  And I wait for 2 seconds
+  And I click on the publish button again
+  And I wait for 2 seconds
+  And I publish the post
+  And I wait for 2 seconds
+  And I click on options
+  And I wait for 2 seconds
+  And I click on change access option
+  And I wait for 2 seconds
+  And I select paid members only
+  And I click on options
+  And I wait for 2 seconds
+  And I click on update
+  And I wait for 2 seconds
+  And I click on the update button
+  And I wait for 2 seconds
+  And I click on posts
+  And I wait for 5 seconds
+  And I click on the profile icon
+  And I wait for 2 seconds
+  And I click on logout
+  And I wait for 2 seconds
+  Then I navigate to page "http://localhost:2368/"
   And I wait for 2 seconds

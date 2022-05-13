@@ -1,3 +1,5 @@
+Feature: Escenario 20
+
 @user20 @web
 Scenario: El usuario inicia sesión, crea un nuevo post, lista los posts, crea un nuevo post con el mismo contenido del anterior, y lista nuevamente los posts.
 Given I navigate to page "http://localhost:2368/ghost/"

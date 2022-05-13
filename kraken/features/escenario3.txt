@@ -1,3 +1,5 @@
+Feature: Escenario 3
+
 @user3 @web
 Scenario: El usuario administrador inicia sesion, crea un post, visualiza el post creado, luego edita el post y lista los posts para ver su post editado.
   Given I navigate to page "http://localhost:2368/ghost/"
