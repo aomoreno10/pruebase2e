@@ -11,11 +11,11 @@ export function crearPost(titulo, contenido) {
     cy.get('body').then(($ele) => {
 
         if ($ele.find('.gh-editor-back-button').length > 0) {
-            cy.get('.gh-editor-back-button').click()
+            cy.get('.gh-editor-back-button').click({ force: true })
         }
 
         if ($ele.find("a[href='#/posts/']").length > 0) {
-            cy.get("a[href='#/posts/']").first().click()
+            cy.get("a[href='#/posts/']").first().click({ force: true })
         }
 
     })
@@ -30,7 +30,18 @@ export function publicarPost() {
     cy.wait(1000);
     cy.get('.gh-publishmenu-button').click();
     cy.wait(1000);
-    cy.get('.gh-publishmenu-footer').find('.ember-view').click();
+
+    cy.get('body').then(($ele) => {
+
+        if ($ele.find('.epm-modal-container').length > 0) {
+            cy.get('.epm-modal-container').find('.ember-view').click({ force: true })
+        }
+
+        if ($ele.find(".gh-publishmenu-footer").length > 0) {
+            cy.get(".gh-publishmenu-footer").find('.ember-view').click({ force: true })
+        }
+        
+    })
     
     cy.get('body').then(($ele) => {
 

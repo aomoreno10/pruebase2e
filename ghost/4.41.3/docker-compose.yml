@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   ghost1:
-    image: ghost:4.4.0-alpine
+    image: ghost:4.41.3-alpine
     restart: always
     ports:
       - 8020:2368
