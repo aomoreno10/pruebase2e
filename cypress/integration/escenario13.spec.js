@@ -2,7 +2,7 @@ import { URL, LOGIN_EMAIL, LOGIN_PASSWORD } from "./env";
 
 describe('Escenario 13:', function () {
 
-  it('La cantidad de posts mostrados a los usuarios es igual o menor a la cantidad de posts mostrados en el tablero de administrador', function () {
+  it('Dada la existencia de mínimo un post, la cantidad de posts mostrados a los usuarios es igual o menor a la cantidad de posts mostrados en el tablero de administrador', function () {
 
     login();
     cy.wait(1000);

@@ -24,7 +24,7 @@ describe('Escenario 16:', function () {
     login();
     cy.wait(1000);
     listarPostsAdmin();
-
+    cy.wait(3000);
     borrarPostsExistentes();
 
     cy.visit(URL + '/ghost/#/signout')
