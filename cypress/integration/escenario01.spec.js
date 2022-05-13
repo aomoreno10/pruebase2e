@@ -9,9 +9,12 @@ describe('Escenario 1:', function () {
 
     login();
     cy.wait(500);
+    cy.screenshot('01-login')
     crearPost(randomTitle, randomBody);
     cy.wait(500);
+    cy.screenshot('02-crearPost')
     listarPostsAdmin().should('include.text', randomTitle)
+    cy.screenshot('03-listarPostsAdmin')
   })
 })
 

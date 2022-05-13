@@ -23,13 +23,18 @@ describe('Escenario 16:', function () {
   it('Al eliminar todos los posts, estos desaparecen para los usuarios', function () {
     login();
     cy.wait(1000);
+    cy.screenshot('01-login')
     listarPostsAdmin();
-
+    cy.wait(3000);
+    cy.screenshot('02-listarPostsAdmin')
     borrarPostsExistentes();
+    cy.screenshot('03-borrarPostsExistentes')
 
     cy.visit(URL + '/ghost/#/signout')
     cy.wait(1000);
+    cy.screenshot('04-logout')
     listarPostsBlog();
+    cy.screenshot('04-listarPostsBlog')
     assert(Cypress.$('.post-card').length === 0)
   })
 })

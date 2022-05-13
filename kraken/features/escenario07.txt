@@ -1,4 +1,4 @@
-Feature: Pruebas E2E en la pagina de ghost.
+Feature: Escenario 07
 
 @user1 @web
 Scenario: 7. Como usuario inicio sesion, creo un post, no veo el post ya que no fue publicado
