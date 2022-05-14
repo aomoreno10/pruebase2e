@@ -1,0 +1,1 @@
+var ghost_3 = {"version":"3.42","escenario":"escenario17.spec.js","images":["escenario17.spec.js/3.42/01_login.png","escenario17.spec.js/3.42/02_eliminarTodosLosPost.png","escenario17.spec.js/3.42/03_crearPost.png","escenario17.spec.js/3.42/04_publicarPost.png","escenario17.spec.js/3.42/05_listarPostsBlog.png","escenario17.spec.js/3.42/06_verPostBlog.png"]}
