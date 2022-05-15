@@ -1,5 +1,7 @@
 {
   "USERNAME": "test@test.com",
   "PASSWORD": "1234QWERTY",
-  "NEW_PASSWORD": "qwerty1234"
+  "NEW_PASSWORD": "qwerty1234",
+  "URL_ADMIN": "http://localhost:2368/ghost/#/signin",
+  "URL": "http://localhost:2368"
 }

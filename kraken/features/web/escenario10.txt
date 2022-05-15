@@ -1,7 +1,7 @@
-Feature: Escenario 01
+Feature: Escenario 10
 
 @user1 @web
-Scenario: 1. Como usuario inicio sesion, creo un post y lo veo en la interfaz de administrador
+Scenario: Como usuario inicio sesion, creo y luego elimino un post, cierro sesion y no encuentro dicho post
   Given I navigate to page "<URL_ADMIN>"
   And I wait for 3 seconds
   When I enter email "<USERNAME>"
@@ -25,4 +25,10 @@ Scenario: 1. Como usuario inicio sesion, creo un post y lo veo en la interfaz de
   And I wait for 2 seconds
   And I go back to admin dashboard
   And I wait for 2 seconds
-  Then I should see "$$string_1"
+  And I click on "$$string_1" post
+  And I wait for 2 seconds 
+  And I delete the post
+  And I wait for 5 seconds
+  And I logout
+  And I navigate to page "<URL>"
+  Then I should not see "$$string_1" post in blog entries
