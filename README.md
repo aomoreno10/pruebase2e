@@ -11,7 +11,7 @@ Pruebas de Ghost para pruebas automatizadas
 ## Aplicación Ghost
 Tener la aplicación Ghost instalada y corriendo en el entorno local
 Las pruebas iniciales, se ejecutaron sobre la versión 4.41.3
-Las pruebas de regresión visual se ejecutaron sobre la versión 3.2
+Las pruebas de regresión visual se ejecutaron sobre la versión 3.42
 
 ## Funcionalidades escogidas
 1. Crear un nuevo post
@@ -66,6 +66,6 @@ Las pruebas de regresión visual se ejecutaron sobre la versión 3.2
 # Instrucciones para correr las pruebas de regresión visual
 - Desde una consola ubicarse en la carpeta Regresion_visual
 - Ejecutar el comando cypress open
-- Editar los datos del archivo env.js con los datos de su cuenta local en ghost, tanto en la versión 4.41.3 como en la versión 3.2
+- Editar los datos del archivo env.js con los datos de su cuenta local en ghost, tanto en la versión 4.41.3 como en la versión 3.42
 - Configurar los puertos según se indica en los comentarios del archivo env.js para las versiones de ghost en su máquina local y descomentar la versión de ghost que va a probar.
 - Cuando ejecute cada escenario en las dos versiones de ghost, diríjase al archivo index.html y ejecútelo en su navegador
