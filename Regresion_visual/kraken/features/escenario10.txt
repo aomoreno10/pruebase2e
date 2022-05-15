@@ -2,7 +2,7 @@ Feature: Escenario 10
 
 @user1 @web
 Scenario: Como usuario inicio sesion, creo y luego elimino un post, cierro sesion y no encuentro dicho post
-  Given I navigate to page "<URL_ADMIN>"
+  Given I navigate to page "http://localhost:2368/ghost/"
   And I wait for 3 seconds
   When I enter email "<USERNAME>"
   And I wait for 2 seconds
@@ -30,5 +30,5 @@ Scenario: Como usuario inicio sesion, creo y luego elimino un post, cierro sesio
   And I delete the post
   And I wait for 5 seconds
   And I logout
-  And I navigate to page "<URL>"
+  And I navigate to page "http://localhost:2368/"
   Then I should not see "$$string_1" post in blog entries

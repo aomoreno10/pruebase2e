@@ -1,8 +1,8 @@
-Feature: Escenario 01
+Feature: Pruebas E2E en la pagina de ghost.
 
 @user1 @web
 Scenario: 1. Como usuario inicio sesion, creo un post y lo veo en la interfaz de administrador
-  Given I navigate to page "<URL_ADMIN>"
+  Given I navigate to page "http://localhost:2368/ghost/"
   And I wait for 3 seconds
   When I enter email "<USERNAME>"
   And I wait for 2 seconds
