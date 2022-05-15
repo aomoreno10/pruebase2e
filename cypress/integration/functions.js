@@ -47,6 +47,7 @@ export function editarPost(titulo, contenido) {
 export function login() {
     cy.visit(URL + '/ghost');
     cy.wait(1000);
+    cy.wait(1000);
     cy.get('.email').type(LOGIN_EMAIL, { force: true });
     cy.get('.password').type(LOGIN_PASSWORD + '{enter}', { force: true });
     cy.wait(1000);

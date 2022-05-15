@@ -10,14 +10,17 @@ describe('Escenario 3', function () {
         let postTitle = faker.random.word();
         let postBody = faker.random.words(12);
 
-        login();
-        cy.screenshot('Escenario3_paso1_login')
+        cy.visit(URL + '/ghost');
         cy.wait(1000);
+        cy.screenshot('01_login')
+        cy.get('.email').type(LOGIN_EMAIL, { force: true });
+        cy.get('.password').type(LOGIN_PASSWORD + '{enter}', { force: true });
+        cy.wait(1000); 
         crearPost(postTitle, postBody);
-        cy.screenshot('Escenario3_paso2_crearPost')
+        cy.screenshot('02_crearPost')
         cy.wait(1000);
-        editarPost(' con Título editado', 'Contenido editado')
-        cy.screenshot('Escenario3_paso3_editarPost')
+        editarPost(postTitle, postBody);
+        cy.screenshot('03_editarPost')
         cy.wait(1000);
     })
 })

@@ -1,1 +1,1 @@
-var ghost_4 = {"version":"4.41.3","escenario":"escenario10.spec.js","images":["escenario10.spec.js/4.41.3/01_listarPostsBlog","escenario10.spec.js/4.41.3/02_listarPostsAdmin","escenario10.spec.js/4.41.3/03_eliminarPost","escenario10.spec.js/4.41.3/04_listarPostsBlog"]}
+var ghost_4 = {"version":"4.41.3","escenario":"escenario03.spec.js","images":["escenario03.spec.js/4.41.3/01_login","escenario03.spec.js/4.41.3/02_crearPost","escenario03.spec.js/4.41.3/03_editarPost"]}

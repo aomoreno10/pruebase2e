@@ -7,7 +7,6 @@ export function crearPost(titulo, contenido) {
     cy.wait(1000);
     cy.get('.gh-editor-title').type(titulo, { force: true });
     cy.get('.koenig-editor__editor-wrapper').find('[contenteditable]').type(contenido);
-
     cy.get('body').then(($ele) => {
 
         if ($ele.find('.gh-editor-back-button').length > 0) {
@@ -68,8 +67,22 @@ export function verPostBlog() {
 }
 
 // 5. Editar el contenido de un post publicado
-export function editarPost() {
+export function editarPost(titulo, contenido) {
+    cy.get('.gh-content-entry-title').first().click();
+    cy.wait(1000);
+    cy.get('.gh-editor-title').type(titulo, { force: true });
+    cy.wait(1000);
+    cy.get('.koenig-editor__editor-wrapper').find('[contenteditable]').type(contenido);
+    cy.get('body').then(($ele) => {
 
+        if ($ele.find('.gh-editor-back-button').length > 0) {
+            cy.get('.gh-editor-back-button').click({ force: true })
+        }
+
+        if ($ele.find("a[href='#/posts/']").length > 0) {
+            cy.get("a[href='#/posts/']").first().click({ force: true })
+        }
+    })
 }
 
 // 6. Login
