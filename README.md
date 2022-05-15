@@ -9,7 +9,9 @@ Pruebas de Ghost para pruebas automatizadas
 # Entorno inicial
 
 ## Aplicación Ghost
-Tener la aplicación Ghost instalada y corriendo en el entorno local, las pruebas se ejecutaron sobre la versión 4.41.3
+Tener la aplicación Ghost instalada y corriendo en el entorno local
+Las pruebas iniciales, se ejecutaron sobre la versión 4.41.3
+Las pruebas de regresión visual se ejecutaron sobre la versión 3.2
 
 ## Funcionalidades escogidas
 1. Crear un nuevo post
@@ -38,8 +40,8 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 8. El usuario inicia sesión, crea un nuevo post, lista los posts en la interfaz de administrador, elimina el post y vuelve a listar los posts en la interfaz de administrador para verificar la eliminación (prueba negativa).
 9. El usuario inicia sesión, crea un nuevo post, lo publica, cambia el acceso del post creado, cierra la sesión y ve los posts publicados en el home del blog para verificar que no aparezca. (prueba negativa).
 10. El usuario ve los posts publicados en el home del blog, luego inicia sesión, elimina el post, cierra sesión y ve los posts publicados en el home del blog nuevamente para verificar la eliminación. 
-11. El usuario inicia sesión, crea un nuevo post, agrega una imagen al post, cierra la sesión, ve los posts publicados en el home del blot y ve el detalle del post. 
-12. El usuario inicia sesión, crea un nuevo post, agreta una imagen al post, cierra la sesión, ve los posts publicados en el home del blot, ve el detalle del post, vuelve a iniciar sesión, elimina la imagen, cierra la sesión y ve los posts publicados en el home del blog.
+11. El usuario inicia sesión, crea un nuevo post, agrega una imagen al post, cierra la sesión, ve los posts publicados en el home del blog y ve el detalle del post. 
+12. El usuario inicia sesión, crea un nuevo post, agreta una imagen al post, cierra la sesión, ve los posts publicados en el home del blog, ve el detalle del post, vuelve a iniciar sesión, elimina la imagen, cierra la sesión y ve los posts publicados en el home del blog.
 13. El usuario inicia sesión, lista los posts en la interfaz de administrador, cierra la sesión y ve los posts publicados en el home del blog. 
 14. El usuario inicia sesión,  deja de publicar todos los posts, cierra sesión y verifica que no haya ningún post publicado en el home del blog.
 15. El usuario inicia sesión, elimina todos los posts y verifica que no exista ningún post listandolos en la interfaz de administrador (prueba negativa).
@@ -51,7 +53,6 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 
 # Instrucciones para correr las pruebas 
 ## Cypress
-- Copiar los archivos de la carpeta cypress/integration en la carpeta integration de un nuevo proyecto en cypress
 - Editar las constantes del archivo env.js acordes a la aplicación Ghost que van a probar
 - Ubicarse en una consola en la raíz del proyecto y ejecutar el comando cypress open
 - Dar click en el escenario que desee probar.
@@ -61,3 +62,11 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 - Modificar el archivo properties.json con los datos de su usuario y contraseña local
 - Para correr cada uno de los escenarios copie el contenido del archivo .txt con el número del escenario especificado en el archivo ghost.feature
 - Ubicarse en la raíz de la carpeta Kraken y ejecutar el comando ./node_modules/kraken-node/bin/kraken-node run
+
+# Instrucciones para correr las pruebas de regresión visual
+- Desde una consola ubicarse en la carpeta Regresion_visual
+- Ejecutar el comando cypress open
+- Editar los datos del archivo env.js con los datos de su cuenta local en ghost, tanto en la versión 4.41.3 como en la versión 3.2
+- Configurar los puertos según se indica en los comentarios del archivo env.js para las versiones de ghost en su máquina local y descomentar la versión de ghost que va a probar.
+- Cuando ejecute cada escenario en las dos versiones de ghost, diríjase al archivo index.html y ejecútelo en su navegador
+- 
